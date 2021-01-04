@@ -15,7 +15,7 @@ import java.util.List;
 
 public class GuildMember {
     private final User user;
-    private int questionCount;
+    private int questionCountPerUser; //change name
     public int questionsAnswered;
     private final List<String> questions;
 
@@ -44,9 +44,9 @@ public class GuildMember {
     }
 
     public void startPrivateChat() {
-        int questionNumber = questionCount++;
+        int questionNumber = questionCountPerUser++;
         int totalNumberOfQuestions = GetQuestions.getTotalNumberOfQuestions();
-        while (questionNumber < totalNumberOfQuestions) { //4
+        while (questionNumber < totalNumberOfQuestions) {   //4
             user.openPrivateChannel().queue(channel -> channel.sendMessage(questions.get(questionNumber)).queue());
             break;
         }
@@ -60,7 +60,7 @@ public class GuildMember {
            // channel.sendMessage(user.getName()).queue();
             for (int i = totalNumberOfQuestions - 1; i >= 1; i--) {
                 int responseNumber = memberResponseListSize - i;
-                UserResponse response = userAfterStandUp.getResponses().get(responseNumber);
+                UserResponse response = userAfterStandUp.getResponses().get(responseNumber);  //chnge response name
                 String todaysUserResponse = response.getResponse();
 
                 StandUpQuestion question = response.getQuestion();
@@ -72,8 +72,9 @@ public class GuildMember {
         }
     }
 
-    public int getQuestionCount() {
-        return questionCount;
+    //put getters and setters in other place
+    public int getQuestionCountPerUser() {
+        return questionCountPerUser;
     }
 
     public List<String> getQuestions() {

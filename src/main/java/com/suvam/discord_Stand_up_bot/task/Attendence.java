@@ -17,18 +17,18 @@ public class Attendence extends TimerTask {
 
     @Override
     public void run() {
-        Map<String, GuildMember> guildMembers = StandUpScheduler.membersMap; //StandUpScheduler chage 7
+        Map<String, GuildMember> guildMembers = StandUpScheduler.membersMap;   //StandUpScheduler chage 7
         TextChannel channel = jda.getGuildsByName("suvBot", true).get(0).getTextChannelsByName("general", true).get(0);
         EmbedBuilder embed = new EmbedBuilder();
-        String absentMembers = "- ";
+        StringBuilder absentMembers = new StringBuilder("- ");
 
         for (Map.Entry<String, GuildMember> entry : guildMembers.entrySet()) {
             int numberOfAnswer = entry.getValue().questionsAnswered;
             if (numberOfAnswer == 0) {
-                absentMembers += entry.getKey() + " , ";
+                absentMembers.append(entry.getKey()).append(" , ");
             }
         }
-        embed.addField("Members who are absent for todays standup ", absentMembers, true);
+        embed.addField("Members who are absent for todays standup ", absentMembers.toString(), true);
         embed.setColor(Color.RED);
         channel.sendMessage(embed.build()).queue();
     }

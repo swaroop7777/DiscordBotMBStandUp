@@ -27,7 +27,7 @@ public class UserRepliedEvent extends ListenerAdapter {
             int totalQuestionAnswered = respondedGuildMember.getQuestionsAnswered();
             respondedGuildMember.setQuestionsAnswered(++totalQuestionAnswered);
 
-            int lastAskedQuestionNumber = respondedGuildMember.getQuestionCount() - 1;
+            int lastAskedQuestionNumber = respondedGuildMember.getQuestionCountPerUser() - 1;
             String lastRespondedQuestion = respondedGuildMember.getQuestions().get(lastAskedQuestionNumber);
             StandUpQuestion question = GetQuestions.getQuestionByQuestion(lastRespondedQuestion);
 
