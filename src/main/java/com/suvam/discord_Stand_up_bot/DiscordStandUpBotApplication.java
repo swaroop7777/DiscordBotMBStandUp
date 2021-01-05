@@ -31,8 +31,8 @@ public class DiscordStandUpBotApplication {
 		TimerTask standUp = new com.suvam.discord_Stand_up_bot.task.StandUpScheduler(jda);
 		TimerTask attendence = new com.suvam.discord_Stand_up_bot.task.Attendence(jda);
 
-		timer.schedule(standUp, 0, 90000);
-		timer.schedule(attendence, 80000,80000);
+		timer.schedule(standUp, 0, 1000*24*60*60);
+		timer.schedule(attendence, 80000,1000*24*60*60);
 	}
 
 }
