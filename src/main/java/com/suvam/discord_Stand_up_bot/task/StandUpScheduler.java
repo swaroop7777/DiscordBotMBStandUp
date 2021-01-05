@@ -33,7 +33,7 @@ public class StandUpScheduler extends TimerTask {
         Integer todaysDay = calendar.get(Calendar.DAY_OF_WEEK);
         if (allowedDays.contains(todaysDay)) {
             TimerTask attendance = new com.suvam.discord_Stand_up_bot.task.Attendence(jda);
-            timer.schedule(attendance, 1000*60*2);
+            timer.schedule(attendance, 1000*60*1);
             InsertQuestions.insert();
             membersMap = new HashMap<>();
             List<User> user = jda.getUsers();

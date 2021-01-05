@@ -10,7 +10,7 @@ import java.util.TimerTask;
 
 public class Attendence extends TimerTask {
     private final JDA jda;
-
+    private final String GUILD_NAME="standup-bot-server";
     public Attendence(JDA jda) {
         this.jda = jda;
     }
@@ -18,7 +18,7 @@ public class Attendence extends TimerTask {
     @Override
     public void run() {
         Map<String, GuildMember> guildMembers = StandUpScheduler.membersMap;   //StandUpScheduler chage 7
-        TextChannel channel = jda.getGuildsByName("suvBot", true).get(0).getTextChannelsByName("general", true).get(0);
+        TextChannel channel = jda.getGuildsByName(GUILD_NAME, true).get(0).getTextChannelsByName("general", true).get(0);
         EmbedBuilder embed = new EmbedBuilder();
         StringBuilder absentMembers = new StringBuilder("- ");
 
