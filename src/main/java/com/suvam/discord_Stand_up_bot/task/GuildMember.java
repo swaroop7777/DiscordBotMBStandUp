@@ -64,7 +64,7 @@ public class GuildMember {
 
                 StandUpQuestion question = response.getQuestion();
 
-                embedBuilder.addField(question.getQuestion(), todaysUserResponse, true);
+                embedBuilder.addField(question.getQuestion(), todaysUserResponse, false);
                 embedBuilder.setColor(Color.blue);
             }
             channel.sendMessage(embedBuilder.build()).queue();
