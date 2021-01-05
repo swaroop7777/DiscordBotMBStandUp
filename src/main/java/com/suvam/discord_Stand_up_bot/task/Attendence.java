@@ -25,7 +25,7 @@ public class Attendence extends TimerTask {
         for (Map.Entry<String, GuildMember> entry : guildMembers.entrySet()) {
             int numberOfAnswer = entry.getValue().questionsAnswered;
             if (numberOfAnswer == 0) {
-                absentMembers.append(entry.getKey()).append(" , ");
+                absentMembers.append("@").append(entry.getKey()).append(" , ");
             }
         }
         embed.addField("Members who are absent for todays standup ", absentMembers.toString(), true);

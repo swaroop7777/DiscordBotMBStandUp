@@ -54,4 +54,10 @@ public class QuestionServiceImpl implements QuestionService {
     public int getTotalNUmberOfQuestion() {
         return (int) questionRepository.count();
     }
+
+    @Override
+    public void saveAll (List<StandUpQuestion> questions) {
+        questionRepository.saveAll(questions);
+    }
+
 }

@@ -14,15 +14,13 @@ public class StandUpQuestion {
     @Column(name = "question")
     private String question;
 
-   /* @ManyToMany
-    @JoinTable(name="response_questions",
-            joinColumns = @JoinColumn(name = "qid"),
-            inverseJoinColumns = @JoinColumn(name="ans_id"))
-    private List<UserResponse> responses;*/
+    public StandUpQuestion(){
 
-    //@OneToMany(mappedBy="question")
-    //private List<UserResponse> responses;
+    }
 
+    public StandUpQuestion(String question) {
+        this.question = question;
+    }
 
     public int getQid() {
         return qid;

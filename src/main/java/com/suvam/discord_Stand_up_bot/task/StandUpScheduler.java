@@ -1,6 +1,7 @@
 package com.suvam.discord_Stand_up_bot.task;
 
 
+import com.suvam.discord_Stand_up_bot.util.InsertQuestions;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.User;
 
@@ -17,6 +18,7 @@ public class StandUpScheduler extends TimerTask {
 
     @Override
     public void run() {
+        InsertQuestions.insert();
         String botName = "checkBot";
         membersMap = new HashMap<>();
         List<User> user = jda.getUsers();

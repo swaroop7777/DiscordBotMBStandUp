@@ -19,7 +19,7 @@ public class DiscordStandUpBotApplication {
 	public static void main(String[] args) throws LoginException, InterruptedException {
 		SpringApplication.run(DiscordStandUpBotApplication.class, args);
 
-		String token = "NzkzNDM1NzY2OTY0ODc5Mzgw.X-sOpA.ZalSCiNH_zP84AaChlySmdiaZQg";
+		String token = "NzkzNDM1NzY2OTY0ODc5Mzgw.X-sOpA.ZalSCiNH_zP84AaChlySmdiaZQg"; //NzkzNTAyNjUyMTMwMjYzMDkx.X-tM7g.sAvgj6tObemT8Sdi5rlXzBOfG2g
 		JDA jda = JDABuilder.createDefault(token).setChunkingFilter(ChunkingFilter.ALL)
 				.setMemberCachePolicy(MemberCachePolicy.ALL).enableIntents(GatewayIntent.GUILD_MEMBERS)
 				.setActivity(Activity.watching("morning standup"))

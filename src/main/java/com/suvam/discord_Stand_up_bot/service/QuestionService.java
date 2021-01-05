@@ -17,4 +17,6 @@ public interface QuestionService {
     public StandUpQuestion getQuestionByQuestion(String question);
 
     public int getTotalNUmberOfQuestion();
+
+    public void saveAll(List<StandUpQuestion> questions);
 }
