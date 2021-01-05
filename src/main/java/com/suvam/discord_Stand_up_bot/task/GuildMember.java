@@ -19,7 +19,7 @@ public class GuildMember {
     public int questionsAnswered;
     private final List<String> questions;
 
-    private final String GUILD_NAME="suvBot";
+    private final String GUILD_NAME="standup-bot-server";
 
     public GuildMember(User user) {
         this.user = user;
@@ -57,7 +57,6 @@ public class GuildMember {
             DiscordUser userAfterStandUp = SaveDiscordUser.getDiscordUserByName(user.getName());
             int memberResponseListSize = userAfterStandUp.getResponses().size();
             TextChannel channel = user.getJDA().getGuildsByName(GUILD_NAME, true).get(0).getTextChannelsByName("general", true).get(0); //"suvBot"
-           // channel.sendMessage(user.getName()).queue();
             for (int i = totalNumberOfQuestions - 1; i >= 1; i--) {
                 int responseNumber = memberResponseListSize - i;
                 UserResponse response = userAfterStandUp.getResponses().get(responseNumber);  //chnge response name

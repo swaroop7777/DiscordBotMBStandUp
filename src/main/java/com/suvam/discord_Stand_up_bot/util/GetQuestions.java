@@ -27,4 +27,8 @@ public class GetQuestions {
     public static int getTotalNumberOfQuestions() {
         return questionService.getTotalNUmberOfQuestion();
     }
+
+    public static void deleteAll(){
+        questionService.deleteAll();
+    }
 }

@@ -60,4 +60,9 @@ public class QuestionServiceImpl implements QuestionService {
         questionRepository.saveAll(questions);
     }
 
+    @Override
+    public void deleteAll(){
+        questionRepository.deleteAll();
+    }
+
 }

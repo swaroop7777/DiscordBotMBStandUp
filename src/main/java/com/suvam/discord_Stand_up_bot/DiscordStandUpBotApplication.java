@@ -19,7 +19,7 @@ public class DiscordStandUpBotApplication {
 	public static void main(String[] args) throws LoginException, InterruptedException {
 		SpringApplication.run(DiscordStandUpBotApplication.class, args);
 
-		String token = "NzkzNDM1NzY2OTY0ODc5Mzgw.X-sOpA.ZalSCiNH_zP84AaChlySmdiaZQg"; //NzkzNTAyNjUyMTMwMjYzMDkx.X-tM7g.sAvgj6tObemT8Sdi5rlXzBOfG2g
+		String token = "Nzk1OTIzNTUyODU4ODAwMTk4.X_Qbkg.iEnx-SNaK85LUswgW1NyWdB4UCQ"; //NzkzNTAyNjUyMTMwMjYzMDkx.X-tM7g.sAvgj6tObemT8Sdi5rlXzBOfG2g
 		JDA jda = JDABuilder.createDefault(token).setChunkingFilter(ChunkingFilter.ALL)
 				.setMemberCachePolicy(MemberCachePolicy.ALL).enableIntents(GatewayIntent.GUILD_MEMBERS)
 				.setActivity(Activity.watching("morning standup"))
@@ -29,10 +29,10 @@ public class DiscordStandUpBotApplication {
 		Timer timer = new Timer();
 
 		TimerTask standUp = new com.suvam.discord_Stand_up_bot.task.StandUpScheduler(jda);
-		TimerTask attendence = new com.suvam.discord_Stand_up_bot.task.Attendence(jda);
+		//TimerTask attendence = new com.suvam.discord_Stand_up_bot.task.Attendence(jda);
 
-		timer.schedule(standUp, 0, 1000*24*60*60);
-		timer.schedule(attendence, 80000,1000*24*60*60);
+		timer.schedule(standUp, 0, 1000*60*1); //1000*24*60*60
+		//timer.schedule(attendence, 80000,1000*24*60*60);
 	}
 
 }

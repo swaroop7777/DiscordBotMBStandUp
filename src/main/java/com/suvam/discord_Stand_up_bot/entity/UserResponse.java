@@ -28,7 +28,7 @@ public class UserResponse {
             inverseJoinColumns = @JoinColumn(name="qid"))
     private List<StandUpQuestion> questions;*/
 
-    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH,CascadeType.REMOVE})
     @JoinColumn(name = "qid")
     private StandUpQuestion question;
 

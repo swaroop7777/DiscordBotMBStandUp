@@ -19,4 +19,6 @@ public interface QuestionService {
     public int getTotalNUmberOfQuestion();
 
     public void saveAll(List<StandUpQuestion> questions);
+
+    public void deleteAll();
 }
