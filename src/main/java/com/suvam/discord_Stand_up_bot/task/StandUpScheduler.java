@@ -12,18 +12,19 @@ public class StandUpScheduler extends TimerTask {
     private final JDA jda;
     public static Map<String, GuildMember> membersMap;
     private final List<Integer> allowedDays;
-
+    private Timer timer;
     String BOT_NAME = "standup-bot";
 
     public StandUpScheduler(JDA jda) {
         this.jda = jda;
+        this.timer = new Timer();
         this.allowedDays=new ArrayList<>();
-        this.allowedDays.add(1);
         this.allowedDays.add(2);
         this.allowedDays.add(3);
         this.allowedDays.add(4);
         this.allowedDays.add(5);
         this.allowedDays.add(6);
+        this.allowedDays.add(7);
     }
 
     @Override
@@ -31,6 +32,8 @@ public class StandUpScheduler extends TimerTask {
         Calendar calendar = Calendar.getInstance();
         Integer todaysDay = calendar.get(Calendar.DAY_OF_WEEK);
         if (allowedDays.contains(todaysDay)) {
+            TimerTask attendance = new com.suvam.discord_Stand_up_bot.task.Attendence(jda);
+            timer.schedule(attendance, 1000*60*2);
             InsertQuestions.insert();
             membersMap = new HashMap<>();
             List<User> user = jda.getUsers();
