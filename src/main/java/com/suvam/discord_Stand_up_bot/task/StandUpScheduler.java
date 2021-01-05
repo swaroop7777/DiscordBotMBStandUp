@@ -15,9 +15,9 @@ public class StandUpScheduler extends TimerTask {
     private Timer timer;
     String BOT_NAME = "standup-bot";
 
-    public StandUpScheduler(JDA jda) {
+    public StandUpScheduler(JDA jda,Timer timer) {
         this.jda = jda;
-        this.timer = new Timer();
+        this.timer = timer;
         this.allowedDays=new ArrayList<>();
         this.allowedDays.add(2);
         this.allowedDays.add(3);
